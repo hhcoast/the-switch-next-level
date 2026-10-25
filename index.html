@@ -251,15 +251,18 @@ footer a { color: #f5d77b; }
   html { scroll-behavior: auto; }
   .options button { transition: none; }
 }
+
+.brand { display: inline-flex; flex: 0 0 auto; text-decoration: none; }
+.brand-logo { display: block; width: 200px; max-width: 100%; height: auto; }
+header { align-items: center; }
+@media(max-width:600px) { .brand-logo { width: 174px; } }
 </style>
 </head>
 
 <body>
 
 <header>
-  <strong class="brand">
-    THE SWITCH <span>/ NEXT LEVEL</span>
-  </strong>
+  <a class="brand" href="./index.html" aria-label="The Switch Next Level home"><img class="brand-logo" src="./assets/the-switch-next-level-logo.svg" alt="The Switch | Next Level" width="520" height="300"></a>
 
   <nav aria-label="Main navigation">
     <a href="#journey">Journey</a>
