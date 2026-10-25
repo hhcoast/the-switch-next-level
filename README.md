@@ -1,24 +1,27 @@
 # The Switch | Next Level
 
-Publication status: GitHub Pages deployment pending.
+**Independent research and development continuation — working prototype v0.3 (2026)**
 
-Independent research and development continuation of the collaborative hackathon project [The Switch](https://github.com/kogre/the-switch).
+## Provenance
 
-## What this contains
+- **Civic Return Flow** is the original transition architecture introduced by **Stefanie Haslauer** at the 2026 EU Civic Tech Hackathon.
+- **The Switch** is the jointly developed interdisciplinary hackathon project. Original team repository: https://github.com/kogre/the-switch
+- **The Switch | Next Level** is a separate, independently developed research continuation; it is not an official release by the original hackathon team.
 
-- Standalone responsive GitHub Pages site (`index.html`)
-- Clear separation of initial concept, hackathon teamwork, and subsequent independent development
-- Three-step interactive fictional civic-literacy scenario
-- Research framing and safeguards
+## What this prototype does
+
+- Six-stage interactive fictional civic participation journey with stage-specific feedback.
+- Answer choices lock after a correct response; incorrect responses can be retried.
+- Explicit completion view after step six.
+- Illustrative institutional return record: received, reviewed, decision, public response, visible outcome and learning.
+- Mobile-responsive, keyboard-operable controls, focus indicators and status announcements.
+
+## Limitations and safeguards
+
+All consultations, submissions, records, decisions and institutional responses in the demonstration are **fictional**. No civic input is sent or saved on a server. This is not a functioning participation portal, a legal advice service or evidence of effectiveness. Further research must test comprehension, accessibility, real-world transfer and institutional outcomes. No external AI service is required.
 
 ## Publication
 
-Create a repository under an account with write permissions, upload `index.html` and `README.md` to its root, then enable **Settings → Pages → Deploy from a branch → main / root**. Publication may take a few minutes. Do not claim a live URL before verifying deployment.
+GitHub Pages: https://hhcoast.github.io/the-switch-next-level/
 
-## Attribution and verification
-
-Before publishing, confirm the exact original idea attribution, hackathon name/date and contributors. This draft intentionally avoids unverified names or credits. Review licenses before reusing original assets. No original code or logos are copied.
-
-## Status
-
-Concept demonstrator, not a production civic platform. All scenario data is fictional. No external AI service, user data storage, tracking, or live consultations are included.
+Upload `index.html` and `README.md` to the **root of the `main` branch**. Pages source: `Deploy from a branch` → `main` → `/(root)`.
