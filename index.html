@@ -42,3 +42,7 @@ function restart(){step=0;render();$('progress').scrollIntoView({block:'center'}
 $('next').addEventListener('click',()=>{if(!answered)return;if(step===steps.length-1){$('scenario').classList.add('hidden');$('completion').classList.remove('hidden');$('completion').focus();return;}step++;render();$('progress').scrollIntoView({block:'center'});});$('restart').addEventListener('click',restart);$('play-again').addEventListener('click',restart);render();
 </script>
 </body></html>
+<a class="button secondary"
+   href="./accountability.html#decision">
+  Examine institutional accountability
+</a>
