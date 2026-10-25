@@ -1,0 +1,816 @@
+
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ein eigenständiger Prototyp mit fiktiven Beispielen zu Verstehen, informiertem Handeln, institutioneller Rechenschaft und sichtbarer Rückmeldung nach Beteiligung.">
+<title>The Switch | Next Level · Deutsch · v0.6</title>
+
+<style>
+:root {
+  --ink: #123a33;
+  --paper: #ecf0ec;
+  --signal: #e8613c;
+  --line: #c4d0c8;
+  --muted: #47645a;
+  --pale: #e5eee7;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.6 system-ui, -apple-system, sans-serif;
+}
+
+header, main, footer {
+  padding: 1.5rem max(5vw, calc((100vw - 1050px)/2));
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--line);
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+a { color: inherit; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 4px;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 5.6rem);
+  line-height: 1.08;
+  letter-spacing: -.05em;
+}
+
+h1 span,
+.brand span {
+  color: var(--signal);
+}
+
+h2 {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+  line-height: 1.45;
+}
+
+.eyebrow,
+.progress {
+  font: 700 .83rem/1.6 ui-monospace, monospace;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.hero { padding: 3rem 0 4rem; }
+
+.lead {
+  font-size: 1.23rem;
+  max-width: 760px;
+}
+
+.section {
+  padding: 3rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%,245px),1fr));
+  gap: 1rem;
+}
+
+.card,
+.demo,
+.outcome {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: clamp(1.2rem,4vw,2rem);
+}
+
+.card strong { font-size: 1.15rem; }
+
+.actions {
+  display: flex;
+  gap: .7rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.button,
+button {
+  display: inline-block;
+  border: 2px solid var(--ink);
+  border-radius: 30px;
+  background: var(--ink);
+  color: white;
+  padding: .8rem 1.25rem;
+  font: 650 1rem system-ui;
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 48px;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--ink);
+}
+
+.options {
+  display: grid;
+  gap: .75rem;
+  margin: 1.5rem 0;
+}
+
+.options button {
+  background: var(--pale);
+  color: var(--ink);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  text-align: left;
+  width: 100%;
+  transition: border-color .15s;
+}
+
+.options button:hover:not(:disabled),
+.options button.selected {
+  border-color: var(--ink);
+}
+
+.options button.correct {
+  border-color: #25725a;
+  background: #e4f3ea;
+}
+
+.options button.incorrect {
+  border-color: #a64d33;
+  background: #fff0e9;
+}
+
+.options button:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.feedback {
+  font-weight: 650;
+  min-height: 2rem;
+}
+
+.feedback[data-state="error"] {
+  color: #963d29;
+}
+
+.muted { color: var(--muted); }
+
+.track {
+  height: 8px;
+  background: var(--pale);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.track span {
+  display: block;
+  height: 100%;
+  background: var(--signal);
+}
+
+.record {
+  border-left: 4px solid var(--signal);
+  padding: 0 0 0 1rem;
+  margin: 1.25rem 0;
+}
+
+.record p { margin: .3rem 0; }
+
+.record .eyebrow { color: var(--muted); }
+
+.pill {
+  display: inline-block;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: .25rem .7rem;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.notice {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+  background: var(--paper);
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+footer {
+  background: var(--ink);
+  color: white;
+}
+
+footer a { color: #f5d77b; }
+
+@media(max-width:600px) {
+  header, main, footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .actions > * {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  .options button { transition: none; }
+}
+
+.brand { display: inline-flex; flex: 0 0 auto; text-decoration: none; }
+.brand-logo { display: block; width: 200px; max-width: 100%; height: auto; }
+header { align-items: center; }
+@media(max-width:600px) { .brand-logo { width: 174px; } }
+
+.language-switch { display:flex; gap:.35rem; align-items:center; flex-wrap:wrap; }
+.language-switch a { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.35rem .75rem; border:1px solid var(--ink); border-radius:999px; text-decoration:none; font:700 .9rem/1.3 system-ui,sans-serif; }
+.language-switch a[aria-current="page"] { background:var(--ink); color:#fff; }
+h1,h2,h3,.eyebrow,button { overflow-wrap:anywhere; }
+html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
+@media(max-width:600px) { .language-switch { width:100%; } }
+</style>
+<link rel="alternate" hreflang="en" href="./index.html">
+<link rel="alternate" hreflang="de" href="./index-de.html">
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="./index-de.html" aria-label="The Switch Next Level: Startseite"><img class="brand-logo" src="./assets/the-switch-next-level-logo.svg" alt="The Switch | Next Level" width="520" height="300"></a>
+
+  <nav aria-label="Hauptnavigation">
+    <a href="#journey">Entstehung</a>
+    <a href="#demo">Ausprobieren</a>
+    <a href="#return-flow">Rückmeldung</a>
+    <a href="./accountability-de.html#decision">Rechenschaft</a>
+    <a href="#research">Forschung</a>
+  </nav>
+<nav class="language-switch" aria-label="Sprache wählen"><a href="./index.html" lang="en" hreflang="en">English</a><a href="./index-de.html" lang="de" hreflang="de" aria-current="page">Deutsch</a></nav></header>
+
+<main>
+
+<section class="hero">
+  <p class="eyebrow">
+    Eigenständige Weiterentwicklung · Arbeitsprototyp v0.6 · 2026
+  </p>
+
+  <h1>
+    Beteiligung beginnt<br>
+    mit <span>Verstehen.</span>
+  </h1>
+
+  <p class="lead">
+    Und Vertrauen braucht eine sichtbare Rückmeldung. Erkunde einen fiktiven Beteiligungsprozess: von öffentlicher Information über informiertes Handeln bis zur begründeten Antwort einer Institution.
+  </p>
+
+  <div class="actions">
+    <a class="button" href="#demo">
+      Interaktives Szenario ausprobieren
+    </a>
+
+    <a class="button secondary"
+       href="./accountability-de.html#decision">
+      Rechenschaft erkunden
+    </a>
+
+    <a class="button secondary"
+       href="https://kogre.github.io/the-switch/index.html">
+      Ursprüngliches Hackathon-Projekt
+    </a>
+  </div>
+</section>
+
+<section class="section" id="journey">
+
+  <p class="eyebrow">Entstehung und Beiträge</p>
+
+  <h2>
+    Eine ursprüngliche Architektur. Ein gemeinsames Projekt. Eine eigenständige Weiterentwicklung.
+  </h2>
+
+  <div class="grid">
+
+    <article class="card">
+      <p class="eyebrow">01 · Ursprung</p>
+      <strong>Civic Return Flow</strong>
+      <p>
+        Stefanie Haslauer brachte die ursprüngliche Transition Architecture Civic Return Flow in den EU Civic Tech Hackathon 2026 ein: Sie macht den institutionellen Rückweg nach der Beteiligung von Bürger:innen sichtbar.
+      </p>
+    </article>
+
+    <article class="card">
+      <p class="eyebrow">02 · Hackathon</p>
+      <strong>The Switch: gemeinsames Teamprojekt</strong>
+      <p>
+        Das interdisziplinäre Hackathon-Team entwickelte The Switch gemeinsam. Die Plattform verbindet Zugang und Verstehen als Voraussetzungen von Beteiligung mit dem institutionellen Rückweg.
+      </p>
+      <a href="https://github.com/kogre/the-switch">
+        Ursprüngliches Team-Repository
+      </a>
+    </article>
+
+    <article class="card">
+      <p class="eyebrow">03 · Next Level</p>
+      <strong>Eigenständige Weiterentwicklung für die Forschung</strong>
+      <p>
+        Dieser eigenständige Prototyp untersucht demokratische Handlungskompetenz, menschliches Urteilsvermögen, informiertes Handeln, öffentliche Rückmeldung, institutionelle Rechenschaft und organisationales Lernen. Er ist keine offizielle Aktualisierung durch das ursprüngliche Team.
+      </p>
+    </article>
+
+  </div>
+
+  <p>
+    <strong>Leitgedanke:</strong>
+    Beteiligung bringt Beiträge ein. Ein sichtbarer Rückweg schafft Vertrauen. Gemeinsames Lernen ermöglicht Verbesserung.
+  </p>
+
+</section>
+
+<section class="section" id="demo">
+
+  <p class="eyebrow">
+    Interaktive Simulation · fiktive Gemeinde
+  </p>
+
+  <h2>Von der Information zum sichtbaren Ergebnis</h2>
+
+  <p>
+    Dieses Szenario mit sechs Schritten ist erfunden. Es ist kein laufendes Beteiligungsverfahren. Antworten werden ausschließlich in diesem Browser verarbeitet; es wird nichts eingereicht oder auf einem Server gespeichert.
+  </p>
+
+  <div class="demo"
+       id="scenario"
+       aria-label="Interaktives Szenario zur Bürger:innenbeteiligung">
+
+    <p class="progress" id="progress">SCHRITT 1 VON 6</p>
+
+    <div class="track" aria-hidden="true">
+      <span id="bar" style="width:16.67%"></span>
+    </div>
+
+    <p class="muted" id="stage"></p>
+    <h3 id="question"></h3>
+
+    <div class="options"
+         id="options"
+         role="group"
+         aria-label="Antwortmöglichkeiten">
+    </div>
+
+    <p class="feedback"
+       id="feedback"
+       role="status"
+       aria-live="polite">
+    </p>
+
+    <div class="actions">
+      <button id="next" type="button" hidden>
+        Weiter
+      </button>
+
+      <button id="restart"
+              type="button"
+              class="secondary">
+        Neu starten
+      </button>
+    </div>
+
+  </div>
+
+  <div class="outcome hidden"
+       id="completion"
+       tabindex="-1"
+       aria-labelledby="complete-heading">
+
+    <p class="eyebrow">Lernweg abgeschlossen · 6 von 6</p>
+
+    <h3 id="complete-heading">
+      Du hast den institutionellen Rückweg erreicht.
+    </h3>
+
+    <p>
+      Du hast Informationen geprüft, eine Frist eingeordnet, die Quelle überprüft, selbst entschieden und erkundet, wie eine nachvollziehbare öffentliche Antwort aussehen könnte.
+    </p>
+
+    <p>
+      <strong>Wichtige Unterscheidung:</strong>
+      Dies ist eine Lerndemonstration. Sie belegt weder die Antwort einer realen Institution noch einen Zuwachs an Vertrauen.
+    </p>
+
+    <div class="actions">
+
+      <a class="button" href="#return-flow">
+        Fiktiven Rückmeldeverlauf ansehen
+      </a>
+
+      <a class="button secondary"
+         href="./accountability-de.html#decision">
+        Institutionelle Rechenschaft untersuchen
+      </a>
+
+      <button id="play-again"
+              class="secondary"
+              type="button">
+        Erneut spielen
+      </button>
+
+    </div>
+  </div>
+
+</section>
+
+<section class="section" id="return-flow">
+
+  <p class="eyebrow">
+    Civic Return Flow · beispielhafte institutionelle Dokumentation
+  </p>
+
+  <h2>Was passiert nach der Beteiligung?</h2>
+
+  <p>
+    Eine fiktive Dokumentation macht den Rückweg greifbar. Sie ist <strong>keine reale Eingabe, kein Nachverfolgungssystem, keine behördliche Antwort und kein überprüftes Ergebnis.</strong>
+  </p>
+
+  <div class="outcome">
+
+    <p>
+      <span class="pill">Fiktive Demonstration</span>
+      <span class="pill">Fall CRF-DEMO-001</span>
+    </p>
+
+    <div class="record">
+      <p class="eyebrow">01 · Eingegangen</p>
+      <h3>Eingang des Beitrags bestätigt</h3>
+      <p>
+        Im erfundenen Beteiligungsverfahren wurde ein Vorschlag für sicherere Straßenquerungen im Wohnviertel erfasst. Eine Eingangsbestätigung würde den Einreichungsweg und die nächsten Schritte nennen.
+      </p>
+    </div>
+
+    <div class="record">
+      <p class="eyebrow">02 · Geprüft</p>
+      <h3>Prüfung nachvollziehbar gemacht</h3>
+      <p>
+        Die fiktive Mobilitätsstelle prüft Umsetzbarkeit, Barrierefreiheit, Sicherheit, finanzielle Grenzen und alternative Maßnahmen. Das Beispiel behauptet nicht, dass eine reale Prüfung stattgefunden hat.
+      </p>
+    </div>
+
+    <div class="record">
+      <p class="eyebrow">03 · Entscheidung</p>
+      <h3>Vorschlag in dieser Form nicht übernommen</h3>
+      <p>
+        In diesem erfundenen Fall wird die vorgeschlagene Querungsstelle nicht genehmigt, weil sie einem bestehenden Sicherheitsplan für die Kreuzung widerspricht. Dies ist eine beispielhafte Begründung, kein tatsächlicher technischer Befund.
+      </p>
+    </div>
+
+    <div class="record">
+      <p class="eyebrow">04 · Öffentliche Antwort</p>
+      <h3>Gründe und nächste Schritte veröffentlicht</h3>
+      <p>
+        Die fiktive Behörde erklärt ihre Entscheidung und kündigt an, alternative Maßnahmen für die Sicherheit von Fußgänger:innen in einer späteren Planungsrunde zu prüfen.
+      </p>
+    </div>
+
+    <div class="record">
+      <p class="eyebrow">05 · Sichtbares Ergebnis und Lernen</p>
+      <h3>Nachvollziehbar, aber nicht automatisch erfolgreich</h3>
+      <p>
+        Die Dokumentation unterscheidet eine begründete Entscheidung von einer nachgewiesenen Veränderung vor Ort. Tatsächliche Umsetzung, weitere Bearbeitung und wiederkehrende Barrieren müssten unabhängig überprüft werden.
+      </p>
+    </div>
+
+  </div>
+
+  <p class="muted">
+    Gestaltungshypothese: Eine Institution kann ihre Antwort verständlich machen, ohne zu versprechen, jeden Beitrag zu übernehmen. Ob das Vertrauen stärkt, muss empirisch geprüft werden.
+  </p>
+
+  <div class="actions">
+    <a class="button"
+       href="./accountability-de.html#decision">
+      Entscheidung und Nachweise prüfen
+    </a>
+  </div>
+
+</section>
+
+<section class="section" id="research">
+
+  <p class="eyebrow">Forschung und Schutzvorkehrungen</p>
+
+  <h2>
+    Von Klicks zu Handlungskompetenz und institutioneller Rechenschaft
+  </h2>
+
+  <div class="grid">
+
+    <article class="card">
+      <strong>Verstehen</strong>
+      <p>
+        Verstehen Menschen den Zweck, die Teilnahmebedingungen und die Fristen?
+      </p>
+    </article>
+
+    <article class="card">
+      <strong>Urteilsvermögen</strong>
+      <p>
+        Können Menschen offizielle Quellen überprüfen und selbstständig entscheiden?
+      </p>
+    </article>
+
+    <article class="card">
+      <strong>Handeln</strong>
+      <p>
+        Können Menschen offizielle Beteiligungswege sicher nutzen?
+      </p>
+    </article>
+
+    <article class="card">
+      <strong>Institutioneller Rückweg</strong>
+      <p>
+        Können Institutionen den Eingang von Beiträgen bestätigen, Entscheidungen begründen und Ergebnisse sichtbar machen?
+      </p>
+    </article>
+
+    <article class="card">
+      <strong>Institutionelles Lernen</strong>
+      <p>
+        Kann das Erkennen wiederkehrender Zugangsbarrieren dazu beitragen, öffentliche Kommunikation und Abläufe zu verbessern?
+      </p>
+    </article>
+
+    <article class="card">
+      <strong>Evaluation</strong>
+      <p>
+        Barrierefreiheit, Handlungstransfer, Fairness und tatsächliche institutionelle Ergebnisse müssen künftig empirisch geprüft werden. Dieser Prototyp erbringt keinen Wirksamkeitsnachweis.
+      </p>
+    </article>
+
+  </div>
+
+  <p class="muted">
+    Eine Forschungsanregung ist Paula Klemts öffentlich beschriebener Kurs zum Verstehen von Behördensprache. Es werden weder Lehrmaterialien übernommen noch Kursergebnisse beansprucht. Dieser Prototyp ist mit dem Kurs nicht verbunden. KI ist optional und für die Nutzung nicht erforderlich.
+  </p>
+
+  <p>
+    <a href="https://formation-arc.ch/de/kursangebot">
+      formation-ARC: Kursangebot
+    </a>
+    ·
+    <a href="https://commission.europa.eu/about/departments-and-executive-agencies/translation/plain-language_en">
+      Europäische Kommission: klare Sprache (Englisch)
+    </a>
+  </p>
+
+</section>
+
+</main>
+
+<footer>
+  <p>
+    <strong>The Switch | Next Level</strong>
+    · Prototyp v0.6
+  </p>
+
+  <p>
+    Eigenständiger Forschungsprototyp von Stefanie Haslauer. Die Umsetzung von The Switch beim Hackathon war eine gemeinsame Teamleistung. Alle hier gezeigten Fallverläufe und institutionellen Antworten sind erfunden. Es werden keine aktuellen Beteiligungsdaten und keine Rechtsberatung bereitgestellt.
+  </p>
+</footer>
+
+<script>
+'use strict';
+
+const steps = [
+  {
+    "stage": "Öffentliche Information → Verstehen",
+    "q": "Eine Stadt bittet um Rückmeldungen zu einem Mobilitätsplan für ein Wohnviertel. Antworten müssen bis 15. November eingegangen sein. Was solltest du zuerst prüfen?",
+    "a": [
+      "Wer teilnehmen darf, worum es geht und welche Frist gilt",
+      "Ob die Website ansprechend aussieht",
+      "Ob alle den Vorschlag unterstützen"
+    ],
+    "right": 0,
+    "why": "Richtig. Kläre Zweck, Teilnahmebedingungen und Frist, bevor du entscheidest, ob du teilnehmen möchtest.",
+    "hint": "Prüfe den Zweck des Verfahrens, die Teilnahmebedingungen und die tatsächliche Frist."
+  },
+  {
+    "stage": "Verstehen → Auf die eigene Situation beziehen",
+    "q": "Was bedeutet „Stellungnahmen müssen bis 15. November eingegangen sein“?",
+    "a": [
+      "Ich kann meine Stellungnahme auch später einreichen",
+      "Meine Antwort muss die zuständige Stelle bis zum Fristende erreichen",
+      "An diesem Tag findet die öffentliche Sitzung statt"
+    ],
+    "right": 1,
+    "why": "Richtig. Die Antwort muss bis zum Fristende bei der zuständigen Stelle eingehen. Die Angabe bezeichnet nicht zwingend einen Veranstaltungstermin.",
+    "hint": "Unterscheide zwischen dem Absenden deiner Antwort und ihrem Eingang bei der zuständigen Stelle."
+  },
+  {
+    "stage": "Einordnen → Menschliches Urteilsvermögen",
+    "q": "Ein Beitrag in sozialen Medien behauptet, auf das offizielle Beteiligungsverfahren zu verlinken. Was solltest du tun?",
+    "a": [
+      "Den Link zusammen mit meinen persönlichen Daten weiterteilen",
+      "Die überprüfte offizielle Website der Gemeinde aufrufen",
+      "Den Link für echt halten, weil die Seite professionell aussieht"
+    ],
+    "right": 1,
+    "why": "Richtig. Überprüfe die offizielle Quelle, bevor du handelst.",
+    "hint": "Ein professionelles Erscheinungsbild belegt noch keine Echtheit."
+  },
+  {
+    "stage": "Menschliches Urteilsvermögen → Eigener Beitrag",
+    "q": "Wie kannst du teilnehmen und dabei deine Selbstbestimmung und Privatsphäre schützen?",
+    "a": [
+      "Vertrauliche Angaben in einem öffentlichen Forum veröffentlichen",
+      "Eine KI ungeprüft eine Stellungnahme einreichen lassen",
+      "Den überprüften offiziellen Beteiligungsweg nutzen und meinen Beitrag vor dem Absenden prüfen"
+    ],
+    "right": 2,
+    "why": "Richtig. Dein Beitrag soll deine informierte Entscheidung bleiben. In dieser Simulation wird nichts eingereicht.",
+    "hint": "Behalte die Kontrolle über deinen Beitrag und gib keine unnötigen personenbezogenen Daten preis."
+  },
+  {
+    "stage": "Eigener Beitrag → Institutionelle Prüfung",
+    "q": "Was sollte eine rechenschaftspflichtige Institution nach einer tatsächlichen Einreichung idealerweise bereitstellen?",
+    "a": [
+      "Eine Eingangsbestätigung und eine Erklärung des Prüfverfahrens",
+      "Eine Garantie, dass jeder Vorschlag übernommen wird",
+      "Bis zur endgültigen Entscheidung keinerlei Information"
+    ],
+    "right": 0,
+    "why": "Richtig. Eingangsbestätigung und eine nachvollziehbare Prüfung machen den institutionellen Rückweg sichtbar. Das ist ein Gestaltungsziel, keine Aussage über eine reale Stadt.",
+    "hint": "Rechenschaft bedeutet zu zeigen, wie Beiträge bearbeitet werden. Sie garantiert keine Übernahme."
+  },
+  {
+    "stage": "Institutionelle Prüfung → Öffentliche Antwort → Sichtbares Ergebnis",
+    "q": "Die fiktive Stadt übernimmt deinen Vorschlag nicht. Welche Antwort kann Vertrauen und Lernen unterstützen?",
+    "a": [
+      "Widersprechende Rückmeldungen löschen",
+      "Die Entscheidung erklären, Gründe veröffentlichen und nächste Schritte nennen",
+      "Nur eine allgemeine Dankesnachricht senden"
+    ],
+    "right": 1,
+    "why": "Richtig. Eine begründete öffentliche Antwort hilft, den Rückweg auch bei einer Ablehnung zu schließen. Ob dadurch tatsächlich Vertrauen entsteht, muss geprüft werden.",
+    "hint": "Eine hilfreiche Rückmeldung erklärt, was passiert ist und warum."
+  }
+];
+
+const $ = id => document.getElementById(id);
+
+let step = 0;
+let answered = false;
+let selected = -1;
+
+function render() {
+  const item = steps[step];
+
+  answered = false;
+  selected = -1;
+
+  $('scenario').classList.remove('hidden');
+  $('completion').classList.add('hidden');
+
+  $('progress').textContent =
+    `SCHRITT ${step + 1} VON ${steps.length}`;
+
+  $('bar').style.width =
+    `${100 * (step + 1) / steps.length}%`;
+
+  $('stage').textContent = item.stage;
+  $('question').textContent = item.q;
+  $('feedback').textContent = '';
+
+  $('feedback').removeAttribute('data-state');
+  $('next').hidden = true;
+  $('options').replaceChildren();
+
+  item.a.forEach((answer, i) => {
+    const button = document.createElement('button');
+
+    button.type = 'button';
+    button.textContent = answer;
+    button.setAttribute('aria-pressed', 'false');
+
+    button.addEventListener('click', () => choose(i));
+
+    $('options').appendChild(button);
+  });
+}
+
+function choose(i) {
+  if (answered) return;
+
+  const item = steps[step];
+  const buttons = Array.from(
+    $('options').querySelectorAll('button')
+  );
+
+  buttons.forEach(button => {
+    button.classList.remove('selected', 'incorrect', 'correct');
+    button.setAttribute('aria-pressed', 'false');
+  });
+
+  selected = i;
+
+  buttons[i].classList.add('selected');
+  buttons[i].setAttribute('aria-pressed', 'true');
+
+  if (i === item.right) {
+    answered = true;
+
+    buttons[i].classList.add('correct');
+
+    buttons.forEach(button => {
+      button.disabled = true;
+    });
+
+    $('feedback').textContent = item.why;
+    $('feedback').removeAttribute('data-state');
+
+    $('next').hidden = false;
+
+    $('next').textContent =
+      step === steps.length - 1
+        ? 'Ergebnis ansehen'
+        : 'Weiter';
+
+  } else {
+    buttons[i].classList.add('incorrect');
+
+    $('feedback').textContent =
+      `Noch nicht ganz. ${item.hint} Versuche eine andere Antwort.`;
+
+    $('feedback').setAttribute('data-state', 'error');
+  }
+}
+
+function restart() {
+  step = 0;
+  render();
+
+  $('progress').scrollIntoView({
+    block: 'center'
+  });
+}
+
+$('next').addEventListener('click', () => {
+  if (!answered) return;
+
+  if (step === steps.length - 1) {
+    $('scenario').classList.add('hidden');
+    $('completion').classList.remove('hidden');
+    $('completion').focus();
+    return;
+  }
+
+  step++;
+  render();
+
+  $('progress').scrollIntoView({
+    block: 'center'
+  });
+});
+
+$('restart').addEventListener('click', restart);
+$('play-again').addEventListener('click', restart);
+
+render();
+</script>
+
+<script>document.querySelectorAll(".language-switch a").forEach(link => { link.addEventListener("click", () => { link.hash = window.location.hash; }); });</script>
+</body>
+</html>
