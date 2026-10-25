@@ -1,5 +1,7 @@
 # The Switch | Next Level
 
+Publication status: GitHub Pages deployment pending.
+
 Independent research and development continuation of the collaborative hackathon project [The Switch](https://github.com/kogre/the-switch).
 
 ## What this contains
