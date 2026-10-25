@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="An independent, fictional civic participation prototype exploring understanding, informed action, institutional accountability and visible return flow.">
-<title>The Switch | Next Level · English · v0.6</title>
+<title>The Switch | Next Level · English · v0.7</title>
 
 <style>
 :root {
@@ -263,6 +263,18 @@ header { align-items: center; }
 h1,h2,h3,.eyebrow,button { overflow-wrap:anywhere; }
 html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 @media(max-width:600px) { .language-switch { width:100%; } }
+
+.entry-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:2rem 0 1.25rem; }
+.entry-card { display:flex; flex-direction:column; gap:.8rem; padding:clamp(1.2rem,3vw,1.75rem); border:2px solid var(--ink); border-radius:18px; background:#fff; text-decoration:none; min-width:0; }
+.entry-card strong { font-size:clamp(1.25rem,2.5vw,1.55rem); line-height:1.3; }
+.entry-card .eyebrow { color:var(--muted); }
+.entry-link { margin-top:auto; padding-top:.5rem; font-weight:750; text-decoration:underline; text-underline-offset:.2em; }
+.entry-card:hover { background:var(--pale); }
+.prototype-note { max-width:76ch; font-size:.95rem; color:var(--muted); }
+.card h3 { margin-top:0; }
+.card ul { padding-left:1.25rem; }
+.card li + li { margin-top:.65rem; }
+@media(max-width:650px) { .entry-grid { grid-template-columns:minmax(0,1fr); } }
 </style>
 <link rel="alternate" hreflang="en" href="./index.html">
 <link rel="alternate" hreflang="de" href="./index-de.html">
@@ -274,105 +286,62 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
   <a class="brand" href="./index.html" aria-label="The Switch Next Level home"><img class="brand-logo" src="./assets/the-switch-next-level-logo.svg" alt="The Switch | Next Level" width="520" height="300"></a>
 
   <nav aria-label="Main navigation">
-    <a href="#journey">Journey</a>
+    <a href="#purpose">About</a>
+    <a href="#institutions">For institutions</a>
     <a href="#demo">Try it</a>
     <a href="#return-flow">Return Flow</a>
     <a href="./accountability.html#decision">Accountability</a>
+    <a href="#journey">Origins</a>
     <a href="#research">Research</a>
   </nav>
 <nav class="language-switch" aria-label="Choose language"><a href="./index.html" lang="en" hreflang="en" aria-current="page">English</a><a href="./index-de.html" lang="de" hreflang="de">Deutsch</a></nav></header>
 
 <main>
 
-<section class="hero">
-  <p class="eyebrow">
-    Independent continuation · working prototype v0.6 · 2026
-  </p>
-
-  <h1>
-    Participation begins<br>
-    with <span>understanding.</span>
-  </h1>
-
-  <p class="lead">
-    And trust requires a visible return.
-    Explore a fictional civic journey from public information
-    through informed action to a reasoned institutional response.
-  </p>
-
-  <div class="actions">
-    <a class="button" href="#demo">
-      Explore the interactive scenario
-    </a>
-
-    <a class="button secondary"
-       href="./accountability.html#decision">
-      Explore accountability
-    </a>
-
-    <a class="button secondary"
-       href="https://kogre.github.io/the-switch/index.html">
-      Original hackathon project
-    </a>
-  </div>
+<section class="hero" aria-labelledby="hero-title">
+<p class="eyebrow">Independent continuation · Learning and research prototype v0.7</p>
+<h1 id="hero-title">Understand participation.<br><span>Follow what happens next.</span></h1>
+<p class="lead">The Switch | Next Level connects understandable participation with traceable institutional responses. Explore how to check information, decide independently and ask questions. And how institutions could show what happens to people's contributions.</p>
+<div class="entry-grid">
+<a class="entry-card" href="#demo"><span class="eyebrow">For people</span><strong>I want to understand participation</strong><span>Explore a participation process in six steps.</span><span class="entry-link">Try the learning journey →</span></a>
+<a class="entry-card" href="#institutions"><span class="eyebrow">For institutions</span><strong>We want to make participation traceable</strong><span>Examine requirements for review, reasoning and feedback.</span><span class="entry-link">Explore the institutional perspective →</span></a>
+</div>
+<p class="prototype-note"><strong>Currently: a fictional learning demonstration in English and German.</strong> No real contributions are submitted here. Effects on actual participation and institutional learning have not been established.</p>
+</section>
+<section class="section" id="purpose" aria-labelledby="purpose-title">
+<p class="eyebrow">What · for whom · why</p><h2 id="purpose-title">Orientation before participation. Traceability afterwards.</h2>
+<p>Finding public information, understanding it and acting independently are different tasks. After participation, another question arises: what happened to my contribution?</p>
+<div class="grid">
+<article class="card"><h3>For residents and other eligible participants</h3><p>Understand the purpose, deadlines and participation routes, check official sources and ask focused questions. Eligibility depends on the particular process.</p><p><strong>Aim:</strong> decide independently and assess an institution's response.</p></article>
+<article class="card"><h3>For municipalities and public institutions</h3><p>Document responsibilities, review criteria, decisions and next steps in understandable terms.</p><p><strong>Aim:</strong> show how contributions are handled and what remains unresolved.</p></article>
+<article class="card"><h3>For educators and civil society facilitators</h3><p>Libraries, education providers, youth workers and community organisations can use the example for discussion and practice.</p><p><strong>Aim:</strong> support people in expressing their own voice.</p></article>
+</div>
+<p class="notice"><strong>Support without a participation barrier:</strong> nobody should have to pass a learning test to participate. Choosing not to take part can also be an informed, independent decision.</p>
+</section>
+<section class="section" id="institutions" aria-labelledby="institutions-title">
+<p class="eyebrow">For institutions · Review and learning</p><h2 id="institutions-title">What happens to a contribution?</h2>
+<p>Next Level makes the requirements for a traceable response concrete. The current prototype provides a fictional example. Real use requires responsible teams, resources and genuine scope for participation to influence a decision.</p>
+<div class="grid">
+<article class="card"><h3>Assign responsibility</h3><p>Who receives contributions? Who reviews them? Who decides, and when will a response be provided?</p></article>
+<article class="card"><h3>Explain decisions</h3><p>Which criteria and records support a decision? Why is a proposal adopted, changed or declined?</p></article>
+<article class="card"><h3>Verify implementation</h3><p>What was announced, decided or actually implemented? Which evidence is still missing?</p></article>
+<article class="card"><h3>Learn from barriers</h3><p>Which problems recur? Do they concern language, responsibilities, resources or everyday practices? Who will own an improvement and review it later?</p></article>
+</div>
+<p><strong>Development goal:</strong> turn participation experience into verifiable improvements to communication and processes. The prototype does not yet implement an institutional learning process.</p>
+<div class="actions"><a class="button" href="./accountability.html#decision">Explore the accountability example</a><a class="button secondary" href="#status">See the development status</a></div>
+<p class="muted">Reference: the OECD guidelines treat reasoned feedback and evaluation as tasks in quality participation processes. They do not establish the effectiveness of this prototype or imply OECD endorsement. <a href="https://doi.org/10.1787/f765caf6-en">OECD Guidelines for Citizen Participation Processes (2022)</a>.</p>
+</section>
+<section class="section" id="status" aria-labelledby="status-title">
+<p class="eyebrow">Today and the next step</p><h2 id="status-title">What you can already use here</h2>
+<div class="grid">
+<article class="card"><h3>Available today</h3><ul><li>English and German with a language switch.</li><li>A fictional six-step learning journey with explanatory feedback.</li><li>An example of a decision, evidence status and focused follow-up questions.</li><li>No sign-in or external AI required. Scenario answers are processed locally in the browser.</li></ul></article>
+<article class="card"><h3>To develop for a pilot</h3><ul><li>An actual participation case with a responsible public institution.</li><li>Testing with diverse users and an accessibility review.</li><li>Verifiable institutional responses and documented next steps.</li><li>Research on independent transfer of learning to new situations.</li></ul></article>
+</div>
+<p><strong>Success means:</strong> people can better assess processes and responses. Institutions can substantiate their handling of contributions and learn from identified problems. Greater trust is a possible research outcome, not a guaranteed promise.</p>
+<p class="muted">Proposed first pilot: a municipality with a bounded participation case and a local education or community organisation. No such partnership is claimed here.</p>
 </section>
 
-<section class="section" id="journey">
 
-  <p class="eyebrow">Origins and attribution</p>
-
-  <h2>
-    One original architecture.
-    One shared project.
-    One independent continuation.
-  </h2>
-
-  <div class="grid">
-
-    <article class="card">
-      <p class="eyebrow">01 · Origin</p>
-      <strong>Civic Return Flow</strong>
-      <p>
-        Stefanie Haslauer introduced the original Civic Return Flow
-        transition architecture at the 2026 EU Civic Tech Hackathon:
-        making the institutional response to citizen participation visible.
-      </p>
-    </article>
-
-    <article class="card">
-      <p class="eyebrow">02 · Hackathon</p>
-      <strong>The Switch — collaborative project</strong>
-      <p>
-        The interdisciplinary hackathon team jointly developed The Switch,
-        extending access and understanding before participation and
-        connecting them to the institutional return path.
-      </p>
-      <a href="https://github.com/kogre/the-switch">
-        Original team repository
-      </a>
-    </article>
-
-    <article class="card">
-      <p class="eyebrow">03 · Next Level</p>
-      <strong>Independent research continuation</strong>
-      <p>
-        This separate prototype explores civic literacy, human judgement,
-        informed action, public response, institutional accountability
-        and organisational learning.
-        It is not an official update by the original team.
-      </p>
-    </article>
-
-  </div>
-
-  <p>
-    <strong>Core principle:</strong>
-    Participation creates input.
-    Return Flow creates trust.
-    Shared learning creates improvement.
-  </p>
-
-</section>
 
 <section class="section" id="demo">
 
@@ -643,12 +612,68 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 
 </section>
 
+<section class="section" id="journey">
+
+  <p class="eyebrow">Origins and attribution</p>
+
+  <h2>
+    One original architecture.
+    One shared project.
+    One independent continuation.
+  </h2>
+
+  <div class="grid">
+
+    <article class="card">
+      <p class="eyebrow">01 · Origin</p>
+      <strong>Civic Return Flow</strong>
+      <p>
+        Stefanie Haslauer introduced the original Civic Return Flow
+        transition architecture at the 2026 EU Civic Tech Hackathon:
+        making the institutional response to citizen participation visible.
+      </p>
+    </article>
+
+    <article class="card">
+      <p class="eyebrow">02 · Hackathon</p>
+      <strong>The Switch — collaborative project</strong>
+      <p>
+        The interdisciplinary hackathon team jointly developed The Switch,
+        extending access and understanding before participation and
+        connecting them to the institutional return path.
+      </p>
+      <a href="https://github.com/kogre/the-switch">
+        Original team repository
+      </a>
+    </article>
+
+    <article class="card">
+      <p class="eyebrow">03 · Next Level</p>
+      <strong>Independent research continuation</strong>
+      <p>
+        This separate prototype explores civic literacy, human judgement,
+        informed action, public response, institutional accountability
+        and organisational learning.
+        It is not an official update by the original team.
+      </p>
+    </article>
+
+  </div>
+
+  <p>
+    <strong>Core principle:</strong>
+    Participation creates input.
+    Return Flow creates trust.
+    Shared learning creates improvement.
+  </p>
+
+</section>
 </main>
 
 <footer>
   <p>
     <strong>The Switch | Next Level</strong>
-    · prototype v0.6
+    · prototype v0.7
   </p>
 
   <p>

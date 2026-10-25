@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Ein eigenständiger Prototyp mit fiktiven Beispielen zu Verstehen, informiertem Handeln, institutioneller Rechenschaft und sichtbarer Rückmeldung nach Beteiligung.">
-<title>The Switch | Next Level · Deutsch · v0.6</title>
+<title>The Switch | Next Level · Deutsch · v0.7</title>
 
 <style>
 :root {
@@ -263,6 +263,18 @@ header { align-items: center; }
 h1,h2,h3,.eyebrow,button { overflow-wrap:anywhere; }
 html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 @media(max-width:600px) { .language-switch { width:100%; } }
+
+.entry-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin:2rem 0 1.25rem; }
+.entry-card { display:flex; flex-direction:column; gap:.8rem; padding:clamp(1.2rem,3vw,1.75rem); border:2px solid var(--ink); border-radius:18px; background:#fff; text-decoration:none; min-width:0; }
+.entry-card strong { font-size:clamp(1.25rem,2.5vw,1.55rem); line-height:1.3; }
+.entry-card .eyebrow { color:var(--muted); }
+.entry-link { margin-top:auto; padding-top:.5rem; font-weight:750; text-decoration:underline; text-underline-offset:.2em; }
+.entry-card:hover { background:var(--pale); }
+.prototype-note { max-width:76ch; font-size:.95rem; color:var(--muted); }
+.card h3 { margin-top:0; }
+.card ul { padding-left:1.25rem; }
+.card li + li { margin-top:.65rem; }
+@media(max-width:650px) { .entry-grid { grid-template-columns:minmax(0,1fr); } }
 </style>
 <link rel="alternate" hreflang="en" href="./index.html">
 <link rel="alternate" hreflang="de" href="./index-de.html">
@@ -274,92 +286,62 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
   <a class="brand" href="./index-de.html" aria-label="The Switch Next Level: Startseite"><img class="brand-logo" src="./assets/the-switch-next-level-logo.svg" alt="The Switch | Next Level" width="520" height="300"></a>
 
   <nav aria-label="Hauptnavigation">
-    <a href="#journey">Entstehung</a>
+    <a href="#purpose">Über das Projekt</a>
+    <a href="#institutions">Für Institutionen</a>
     <a href="#demo">Ausprobieren</a>
     <a href="#return-flow">Rückmeldung</a>
     <a href="./accountability-de.html#decision">Rechenschaft</a>
+    <a href="#journey">Entstehung</a>
     <a href="#research">Forschung</a>
   </nav>
 <nav class="language-switch" aria-label="Sprache wählen"><a href="./index.html" lang="en" hreflang="en">English</a><a href="./index-de.html" lang="de" hreflang="de" aria-current="page">Deutsch</a></nav></header>
 
 <main>
 
-<section class="hero">
-  <p class="eyebrow">
-    Eigenständige Weiterentwicklung · Arbeitsprototyp v0.6 · 2026
-  </p>
-
-  <h1>
-    Beteiligung beginnt<br>
-    mit <span>Verstehen.</span>
-  </h1>
-
-  <p class="lead">
-    Und Vertrauen braucht eine sichtbare Rückmeldung. Erkunde einen fiktiven Beteiligungsprozess: von öffentlicher Information über informiertes Handeln bis zur begründeten Antwort einer Institution.
-  </p>
-
-  <div class="actions">
-    <a class="button" href="#demo">
-      Interaktives Szenario ausprobieren
-    </a>
-
-    <a class="button secondary"
-       href="./accountability-de.html#decision">
-      Rechenschaft erkunden
-    </a>
-
-    <a class="button secondary"
-       href="https://kogre.github.io/the-switch/index.html">
-      Ursprüngliches Hackathon-Projekt
-    </a>
-  </div>
+<section class="hero" aria-labelledby="hero-title">
+<p class="eyebrow">Eigenständige Weiterentwicklung · Lern- und Forschungsprototyp v0.7</p>
+<h1 id="hero-title">Beteiligung verstehen.<br><span>Antworten nachvollziehen.</span></h1>
+<p class="lead">The Switch | Next Level verbindet verständliche Beteiligung mit nachvollziehbaren institutionellen Antworten. Erkunde, wie du Informationen prüfst, selbst entscheidest und nachfragst. Und wie Institutionen zeigen könnten, was mit Beiträgen geschieht.</p>
+<div class="entry-grid">
+<a class="entry-card" href="#demo"><span class="eyebrow">Für Menschen</span><strong>Ich möchte Beteiligung verstehen</strong><span>Erkunde einen Beteiligungsprozess in sechs Schritten.</span><span class="entry-link">Lernweg ausprobieren →</span></a>
+<a class="entry-card" href="#institutions"><span class="eyebrow">Für Institutionen</span><strong>Wir möchten Beteiligung nachvollziehbar gestalten</strong><span>Prüft Anforderungen an Bearbeitung, Begründung und Rückmeldung.</span><span class="entry-link">Institutionelle Perspektive erkunden →</span></a>
+</div>
+<p class="prototype-note"><strong>Aktuell: fiktive Lerndemonstration in Deutsch und Englisch.</strong> Hier werden keine realen Beiträge eingereicht. Die Wirkung auf tatsächliche Beteiligung und institutionelles Lernen ist noch nicht nachgewiesen.</p>
+</section>
+<section class="section" id="purpose" aria-labelledby="purpose-title">
+<p class="eyebrow">Was · für wen · wozu</p><h2 id="purpose-title">Orientierung vor der Beteiligung. Nachvollziehbarkeit danach.</h2>
+<p>Öffentliche Informationen zu finden, sie zu verstehen und selbst zu handeln sind unterschiedliche Aufgaben. Nach einer Beteiligung stellt sich eine weitere Frage: Was ist aus meinem Beitrag geworden?</p>
+<div class="grid">
+<article class="card"><h3>Für Einwohner:innen und andere Teilnahmeberechtigte</h3><p>Zweck, Fristen und Beteiligungswege einordnen, offizielle Quellen prüfen und gezielt nachfragen. Die Teilnahmebedingungen hängen vom jeweiligen Verfahren ab.</p><p><strong>Ziel:</strong> selbstbestimmt entscheiden und die Antwort einer Institution beurteilen können.</p></article>
+<article class="card"><h3>Für Kommunen und öffentliche Einrichtungen</h3><p>Zuständigkeiten, Prüfkriterien, Entscheidungen und nächste Schritte verständlich dokumentieren.</p><p><strong>Ziel:</strong> zeigen, wie Beiträge bearbeitet werden und was offen bleibt.</p></article>
+<article class="card"><h3>Für Bildung und zivilgesellschaftliche Begleitung</h3><p>Bibliotheken, Bildungsanbieter:innen, Jugend- und Gemeinwesenarbeit können das Beispiel als Gesprächs- und Übungsgrundlage einsetzen.</p><p><strong>Ziel:</strong> Menschen beim Einbringen ihrer eigenen Stimme unterstützen.</p></article>
+</div>
+<p class="notice"><strong>Unterstützung ohne Zugangshürde:</strong> Niemand muss einen Lerntest bestehen, um sich beteiligen zu dürfen. Auch die Entscheidung gegen eine Teilnahme kann informiert und selbstbestimmt sein.</p>
+</section>
+<section class="section" id="institutions" aria-labelledby="institutions-title">
+<p class="eyebrow">Für Institutionen · Bearbeitung und Lernen</p><h2 id="institutions-title">Was geschieht mit einem Beitrag?</h2>
+<p>Next Level macht Anforderungen an eine nachvollziehbare Antwort konkret. Der heutige Prototyp zeigt dafür ein fiktives Beispiel. Ein tatsächlicher Einsatz braucht verantwortliche Stellen, Ressourcen und einen echten Beteiligungsspielraum.</p>
+<div class="grid">
+<article class="card"><h3>Verantwortung klären</h3><p>Wer nimmt Beiträge entgegen? Wer prüft sie? Wer entscheidet und bis wann wird geantwortet?</p></article>
+<article class="card"><h3>Entscheidungen begründen</h3><p>Welche Kriterien und Unterlagen stützen die Entscheidung? Warum wird ein Vorschlag übernommen, verändert oder abgelehnt?</p></article>
+<article class="card"><h3>Umsetzung überprüfen</h3><p>Was wurde angekündigt, entschieden oder tatsächlich umgesetzt? Welche Nachweise fehlen noch?</p></article>
+<article class="card"><h3>Aus Hürden lernen</h3><p>Welche Probleme treten wiederholt auf? Liegt es an Sprache, Zuständigkeiten, Ressourcen oder gelebten Abläufen? Wer verantwortet eine Verbesserung und überprüft sie später?</p></article>
+</div>
+<p><strong>Entwicklungsziel:</strong> Erkenntnisse aus Beteiligung in überprüfbare Verbesserungen von Kommunikation und Verfahren übersetzen. Ein institutioneller Lernprozess ist im Prototyp noch nicht umgesetzt.</p>
+<div class="actions"><a class="button" href="./accountability-de.html#decision">Beispiel für Rechenschaft erkunden</a><a class="button secondary" href="#status">Entwicklungsstand ansehen</a></div>
+<p class="muted">Fachlicher Bezug: Die OECD-Leitlinien behandeln begründete Rückmeldung und Evaluation als Aufgaben guter Beteiligungsverfahren. Sie belegen keine Wirkung dieses Prototyps und bedeuten keine Unterstützung des Projekts durch die OECD. <a href="https://doi.org/10.1787/f765caf6-en">OECD Guidelines for Citizen Participation Processes (2022, Englisch)</a>.</p>
+</section>
+<section class="section" id="status" aria-labelledby="status-title">
+<p class="eyebrow">Heute und als nächster Schritt</p><h2 id="status-title">Was du hier bereits nutzen kannst</h2>
+<div class="grid">
+<article class="card"><h3>Heute vorhanden</h3><ul><li>Deutsch und Englisch mit Sprachwechsel.</li><li>Ein fiktiver Lernweg mit sechs Schritten und erklärendem Feedback.</li><li>Ein Beispiel für Entscheidung, Nachweise und gezielte Nachfragen.</li><li>Nutzung ohne Anmeldung und ohne externe KI. Szenarioantworten werden lokal im Browser verarbeitet.</li></ul></article>
+<article class="card"><h3>Für einen Pilot zu entwickeln</h3><ul><li>Ein tatsächlicher Beteiligungsfall mit einer verantwortlichen öffentlichen Stelle.</li><li>Erprobung mit unterschiedlichen Nutzer:innen und Prüfung der Barrierefreiheit.</li><li>Überprüfbare institutionelle Antworten und dokumentierte Folgeschritte.</li><li>Untersuchung, ob das Gelernte selbstständig auf neue Situationen übertragen wird.</li></ul></article>
+</div>
+<p><strong>Erfolg bedeutet:</strong> Menschen können Verfahren und Antworten besser beurteilen. Institutionen können ihre Bearbeitung belegen und aus erkannten Problemen lernen. Mehr Vertrauen ist ein mögliches Forschungsergebnis, kein garantiertes Versprechen.</p>
+<p class="muted">Vorgeschlagener erster Pilot: eine Kommune mit einem begrenzten Beteiligungsfall und eine lokale Bildungs- oder Vermittlungseinrichtung. Eine entsprechende Partnerschaft wird hier nicht behauptet.</p>
 </section>
 
-<section class="section" id="journey">
 
-  <p class="eyebrow">Entstehung und Beiträge</p>
-
-  <h2>
-    Eine ursprüngliche Architektur. Ein gemeinsames Projekt. Eine eigenständige Weiterentwicklung.
-  </h2>
-
-  <div class="grid">
-
-    <article class="card">
-      <p class="eyebrow">01 · Ursprung</p>
-      <strong>Civic Return Flow</strong>
-      <p>
-        Stefanie Haslauer brachte die ursprüngliche Transition Architecture Civic Return Flow in den EU Civic Tech Hackathon 2026 ein: Sie macht den institutionellen Rückweg nach der Beteiligung von Bürger:innen sichtbar.
-      </p>
-    </article>
-
-    <article class="card">
-      <p class="eyebrow">02 · Hackathon</p>
-      <strong>The Switch: gemeinsames Teamprojekt</strong>
-      <p>
-        Das interdisziplinäre Hackathon-Team entwickelte The Switch gemeinsam. Die Plattform verbindet Zugang und Verstehen als Voraussetzungen von Beteiligung mit dem institutionellen Rückweg.
-      </p>
-      <a href="https://github.com/kogre/the-switch">
-        Ursprüngliches Team-Repository
-      </a>
-    </article>
-
-    <article class="card">
-      <p class="eyebrow">03 · Next Level</p>
-      <strong>Eigenständige Weiterentwicklung für die Forschung</strong>
-      <p>
-        Dieser eigenständige Prototyp untersucht demokratische Handlungskompetenz, menschliches Urteilsvermögen, informiertes Handeln, öffentliche Rückmeldung, institutionelle Rechenschaft und organisationales Lernen. Er ist keine offizielle Aktualisierung durch das ursprüngliche Team.
-      </p>
-    </article>
-
-  </div>
-
-  <p>
-    <strong>Leitgedanke:</strong>
-    Beteiligung bringt Beiträge ein. Ein sichtbarer Rückweg schafft Vertrauen. Gemeinsames Lernen ermöglicht Verbesserung.
-  </p>
-
-</section>
 
 <section class="section" id="demo">
 
@@ -598,12 +580,57 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 
 </section>
 
+<section class="section" id="journey">
+
+  <p class="eyebrow">Entstehung und Beiträge</p>
+
+  <h2>
+    Eine ursprüngliche Architektur. Ein gemeinsames Projekt. Eine eigenständige Weiterentwicklung.
+  </h2>
+
+  <div class="grid">
+
+    <article class="card">
+      <p class="eyebrow">01 · Ursprung</p>
+      <strong>Civic Return Flow</strong>
+      <p>
+        Stefanie Haslauer brachte die ursprüngliche Transition Architecture Civic Return Flow in den EU Civic Tech Hackathon 2026 ein: Sie macht den institutionellen Rückweg nach der Beteiligung von Bürger:innen sichtbar.
+      </p>
+    </article>
+
+    <article class="card">
+      <p class="eyebrow">02 · Hackathon</p>
+      <strong>The Switch: gemeinsames Teamprojekt</strong>
+      <p>
+        Das interdisziplinäre Hackathon-Team entwickelte The Switch gemeinsam. Die Plattform verbindet Zugang und Verstehen als Voraussetzungen von Beteiligung mit dem institutionellen Rückweg.
+      </p>
+      <a href="https://github.com/kogre/the-switch">
+        Ursprüngliches Team-Repository
+      </a>
+    </article>
+
+    <article class="card">
+      <p class="eyebrow">03 · Next Level</p>
+      <strong>Eigenständige Weiterentwicklung für die Forschung</strong>
+      <p>
+        Dieser eigenständige Prototyp untersucht demokratische Handlungskompetenz, menschliches Urteilsvermögen, informiertes Handeln, öffentliche Rückmeldung, institutionelle Rechenschaft und organisationales Lernen. Er ist keine offizielle Aktualisierung durch das ursprüngliche Team.
+      </p>
+    </article>
+
+  </div>
+
+  <p>
+    <strong>Leitgedanke:</strong>
+    Beteiligung bringt Beiträge ein. Ein sichtbarer Rückweg schafft Vertrauen. Gemeinsames Lernen ermöglicht Verbesserung.
+  </p>
+
+</section>
 </main>
 
 <footer>
   <p>
     <strong>The Switch | Next Level</strong>
-    · Prototyp v0.6
+    · Prototyp v0.7
   </p>
 
   <p>
