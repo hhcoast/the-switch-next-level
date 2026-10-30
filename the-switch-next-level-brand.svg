@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="800" viewBox="0 0 2000 800" role="img" aria-label="The Switch Next Level logo">
+  <defs>
+    <style>
+      .sans{font-family: Arial, Helvetica, sans-serif;}
+    </style>
+  </defs>
+  <rect width="2000" height="800" fill="none"/>
+
+  <!-- top capsule -->
+  <g transform="translate(290 40)">
+    <rect x="0" y="0" width="1220" height="250" rx="110" ry="110" fill="#F7F3EB" stroke="#182641" stroke-width="12"/>
+    <path d="M610 0h500c60 0 110 50 110 110v30c0 60-50 110-110 110H610z" fill="#F47B57"/>
+
+    <!-- left user icon -->
+    <circle cx="240" cy="98" r="42" fill="#182641"/>
+    <path d="M170 220c0-56 36-92 70-92s70 36 70 92v16H170z" fill="#182641"/>
+
+    <!-- central switch knob -->
+    <circle cx="610" cy="125" r="118" fill="#F7F3EB" stroke="#F47B57" stroke-width="14"/>
+    <circle cx="610" cy="125" r="34" fill="#F47B57"/>
+
+    <!-- right network/community icon -->
+    <circle cx="940" cy="78" r="24" fill="#F7F3EB"/>
+    <circle cx="1060" cy="78" r="24" fill="#F7F3EB"/>
+    <circle cx="1000" cy="44" r="24" fill="#F7F3EB"/>
+    <path d="M940 78 L1000 44 L1060 78" stroke="#F7F3EB" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <circle cx="910" cy="168" r="54" fill="#F7F3EB"/>
+    <circle cx="1090" cy="168" r="54" fill="#F7F3EB"/>
+    <circle cx="1000" cy="126" r="54" fill="#F7F3EB"/>
+    <path d="M838 246c0-48 31-80 72-80s72 32 72 80v10h-144z" fill="#F7F3EB"/>
+    <path d="M1018 246c0-48 31-80 72-80s72 32 72 80v10h-144z" fill="#F7F3EB"/>
+    <path d="M922 286c0-68 44-110 98-110s98 42 98 110v10H922z" fill="#F7F3EB"/>
+  </g>
+
+  <!-- wordmark -->
+  <g class="sans" font-weight="900" text-anchor="start">
+    <text x="330" y="560" font-size="120" fill="#F7F3EB" letter-spacing="2">THE</text>
+    <text x="515" y="590" font-size="290" fill="#F7F3EB" letter-spacing="-6">SW</text>
+    <text x="965" y="590" font-size="290" fill="#F47B57" letter-spacing="-6">i</text>
+    <text x="1060" y="590" font-size="290" fill="#F7F3EB" letter-spacing="-6">TCH</text>
+  </g>
+
+  <!-- subtitle -->
+  <g class="sans" font-weight="800" text-anchor="middle">
+    <line x1="455" y1="676" x2="615" y2="676" stroke="#F47B57" stroke-width="20" stroke-linecap="round"/>
+    <text x="1000" y="714" font-size="120" fill="#59D5D0" letter-spacing="10">NEXT LEVEL</text>
+    <line x1="1385" y1="676" x2="1545" y2="676" stroke="#F47B57" stroke-width="20" stroke-linecap="round"/>
+  </g>
+</svg>
