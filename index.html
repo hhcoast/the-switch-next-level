@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="An independent, fictional civic participation prototype exploring understanding, informed action, institutional accountability and visible return flow.">
-<title>The Switch | Next Level · English · v0.9</title>
+<title>The Switch | Next Level · English · v1.0</title>
 
 <style>
 :root {
@@ -279,6 +279,8 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 <link rel="alternate" hreflang="en" href="./index.html">
 <link rel="alternate" hreflang="de" href="./index-de.html">
 <link rel="stylesheet" href="./assets/next-level.css">
+<link rel="stylesheet" href="./switch-theme.css">
+<script src="./switch-ui.js" defer></script>
 </head>
 
 <body>
@@ -287,7 +289,7 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 <header>
   <a class="brand" href="./index.html" aria-label="The Switch Next Level home"><img class="brand-logo" src="./assets/the-switch-next-level-logo.svg" alt="The Switch | Next Level" width="520" height="300"></a>
 
-  <nav aria-label="Main navigation">
+  <nav class="switch-primary" aria-label="Main navigation">
     <a href="#purpose">About</a>
     <a href="#institutions">For institutions</a>
     <a href="#demo">Try it</a>
@@ -301,13 +303,11 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 <main id="main-content">
 
 <section class="hero" aria-labelledby="hero-title">
-<p class="eyebrow">Independent continuation · Learning and research prototype v0.9</p>
-<h1 id="hero-title">Understand participation.<br><span>Assess institutional replies.</span></h1>
-<p class="lead">Find your participation route, develop your own position and assess what an institutional reply actually supports. The Switch | Next Level explores learning support through a fictional case. For public institutions, the example makes responsibilities, reasons and verifiable next steps concrete.</p>
-<div class="entry-grid">
-<a class="entry-card" href="./find.html"><span class="eyebrow">For people</span><strong>I want to find my participation route</strong><span>Find an example by place and topic. Then examine your next step.</span><span class="entry-link">Open the map and examples →</span></a>
-<a class="entry-card" href="#institutions"><span class="eyebrow">For institutions</span><strong>We want to make participation traceable</strong><span>Examine requirements for review, reasoning and feedback.</span><span class="entry-link">Explore the institutional perspective →</span></a>
-</div>
+<p class="switch-kicker">ORIENTATION · PARTICIPATION · RESPONSE</p>
+<p class="eyebrow">Independent continuation · Learning and research prototype v1.0</p>
+<h1 id="hero-title">Participation starts with understanding.</h1>
+<p class="lead">Explore what matters to you, understand participation routes and examine what happens after people contribute. Interactive cases are fictional; no real contributions are submitted.</p>
+<div class="switch-path-grid"><a class="switch-path" href="./find.html"><small>01 · EXPLORE</small><strong>Find participation</strong><span>Interactive European map with fictional cases, topics and links to official sources.</span><b>Open the map →</b></a><a class="switch-path" href="#guided-orientation"><small>02 · ORIENT</small><strong>Guided reflection</strong><span>Explore your own questions and perspectives with optional audio reading.</span><b>Start orientation →</b></a><a class="switch-path" href="./accountability.html#answer-practice"><small>03 · FOLLOW THROUGH</small><strong>Examine replies</strong><span>Assess the reasons, evidence and next steps in a fictional institutional response.</span><b>Examine responses →</b></a></div>
 <p class="prototype-note"><strong>Currently: a fictional learning demonstration in English and German.</strong> No real contributions are submitted here. Effects on actual participation and institutional learning have not been established.</p>
 </section>
 <section class="section" id="purpose" aria-labelledby="purpose-title">
@@ -349,7 +349,7 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 <section class="section" id="status" aria-labelledby="status-title">
 <p class="eyebrow">Today and the next step</p><h2 id="status-title">What you can already use here</h2>
 <div class="grid">
-<article class="card"><h3>Available today</h3><ul><li>English and German with a language switch.</li><li>A fictional six-step learning journey with explanatory feedback.</li><li>A reply comparison with five fictional records, explanatory feedback and space to draft your own question.</li><li>No sign-in or external AI required. Scenario answers are processed locally in the browser.</li></ul></article>
+<article class="card"><h3>Available today</h3><ul><li>English and German with a language switch.</li><li>A fictional six-step learning journey with explanatory feedback and optional reflection with browser speech synthesis.</li><li>A reply comparison with five fictional records, explanatory feedback and space to draft your own question.</li><li>No sign-in or external AI required. Scenario answers are processed locally in the browser.</li></ul></article>
 <article class="card"><h3>To develop for a pilot</h3><ul><li>An actual participation case with a responsible public institution.</li><li>Testing with diverse users and an accessibility review.</li><li>Verifiable institutional responses and documented next steps.</li><li>Research on independent transfer of learning to new situations.</li></ul></article>
 </div>
 <p><strong>Success means:</strong> people can better assess processes and responses. Institutions can substantiate their handling of contributions and learn from identified problems. Greater trust is a possible research outcome, not a guaranteed promise.</p>
@@ -358,6 +358,7 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 
 
 
+<section class="section switch-guided" id="guided-orientation" aria-labelledby="guided-heading"><p class="switch-kicker">New optional feature · Browser speech synthesis</p><h2 id="guided-heading">Your journey begins with a question.</h2><p>Start by developing your own question. You can listen to each reflection prompt. Then choose whether to explore the map, try the learning case or examine institutional responses.</p><div class="switch-reflect-grid"><div class="switch-reflect-card"><label for="switch-reflect-0">1. What matters to you?</label><textarea id="switch-reflect-0" rows="3" maxlength="1200"></textarea><button type="button" class="switch-speak-one" data-prompt="0">Listen to question</button></div><div class="switch-reflect-card"><label for="switch-reflect-1">2. What would you like to understand better?</label><textarea id="switch-reflect-1" rows="3" maxlength="1200"></textarea><button type="button" class="switch-speak-one" data-prompt="1">Listen to question</button></div><div class="switch-reflect-card"><label for="switch-reflect-2">3. Whose perspective might be missing?</label><textarea id="switch-reflect-2" rows="3" maxlength="1200"></textarea><button type="button" class="switch-speak-one" data-prompt="2">Listen to question</button></div><div class="switch-reflect-card"><label for="switch-reflect-3">4. What could your next step be?</label><textarea id="switch-reflect-3" rows="3" maxlength="1200"></textarea><button type="button" class="switch-speak-one" data-prompt="3">Listen to question</button></div></div><div class="switch-controls"><button type="button" id="switch-stop-audio">Stop audio</button><button type="button" id="switch-clear-reflection">Clear answers</button></div><p id="switch-audio-status" role="status" aria-live="polite"></p><p class="switch-small">No voice recording, automatic analysis or transmission of responses. Text stays in these fields until you reload the page. Speech playback depends on browser and device support.</p></section>
 <section class="section" id="demo">
 
   <p class="eyebrow">
@@ -678,7 +679,7 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 <footer>
   <p>
     <strong>The Switch | Next Level</strong>
-    · prototype v0.9
+    · prototype v1.0
   </p>
 
   <p>

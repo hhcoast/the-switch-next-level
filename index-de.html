@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Ein eigenständiger Prototyp mit fiktiven Beispielen zu Verstehen, informiertem Handeln, institutioneller Rechenschaft und sichtbarer Rückmeldung nach Beteiligung.">
-<title>The Switch | Next Level · Deutsch · v0.9</title>
+<title>The Switch | Next Level · Deutsch · v1.0</title>
 
 <style>
 :root {
@@ -279,6 +279,8 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 <link rel="alternate" hreflang="en" href="./index.html">
 <link rel="alternate" hreflang="de" href="./index-de.html">
 <link rel="stylesheet" href="./assets/next-level.css">
+<link rel="stylesheet" href="./switch-theme.css">
+<script src="./switch-ui.js" defer></script>
 </head>
 
 <body>
@@ -287,7 +289,7 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 <header>
   <a class="brand" href="./index-de.html" aria-label="The Switch Next Level: Startseite"><img class="brand-logo" src="./assets/the-switch-next-level-logo.svg" alt="The Switch | Next Level" width="520" height="300"></a>
 
-  <nav aria-label="Hauptnavigation">
+  <nav class="switch-primary" aria-label="Hauptnavigation">
     <a href="#purpose">Über das Projekt</a>
     <a href="#institutions">Für Institutionen</a>
     <a href="#demo">Ausprobieren</a>
@@ -301,13 +303,11 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 <main id="main-content">
 
 <section class="hero" aria-labelledby="hero-title">
-<p class="eyebrow">Eigenständige Weiterentwicklung · Lern- und Forschungsprototyp v0.9</p>
-<h1 id="hero-title">Beteiligung verstehen.<br><span>Antworten kritisch prüfen.</span></h1>
-<p class="lead">Finde deinen Beteiligungsweg, entwickle eine eigene Position und prüfe, was eine institutionelle Antwort tatsächlich belegt. The Switch | Next Level erprobt dafür Lernunterstützung an einem fiktiven Fall. Für öffentliche Stellen macht das Beispiel Anforderungen an Zuständigkeit, Begründung und überprüfbare Folgeschritte konkret.</p>
-<div class="entry-grid">
-<a class="entry-card" href="./find-de.html"><span class="eyebrow">Für Menschen</span><strong>Ich möchte meinen Beteiligungsweg finden</strong><span>Finde ein Beispiel nach Ort und Thema. Prüfe anschließend deinen nächsten Schritt.</span><span class="entry-link">Karte und Beispiele öffnen →</span></a>
-<a class="entry-card" href="#institutions"><span class="eyebrow">Für Institutionen</span><strong>Wir möchten Beteiligung nachvollziehbar gestalten</strong><span>Prüft Anforderungen an Bearbeitung, Begründung und Rückmeldung.</span><span class="entry-link">Institutionelle Perspektive erkunden →</span></a>
-</div>
+<p class="switch-kicker">ORIENTIERUNG · BETEILIGUNG · RÜCKMELDUNG</p>
+<p class="eyebrow">Eigenständige Weiterentwicklung · Lern- und Forschungsprototyp v1.0</p>
+<h1 id="hero-title">Beteiligung beginnt mit Verstehen.</h1>
+<p class="lead">Finde heraus, was dich beschäftigt, prüfe Beteiligungsmöglichkeiten und verfolge, was aus Beiträgen wird. Die interaktiven Fallbeispiele sind fiktiv; es werden keine echten Beiträge eingereicht.</p>
+<div class="switch-path-grid"><a class="switch-path" href="./find-de.html"><small>01 · ENTDECKEN</small><strong>Beteiligung finden</strong><span>Interaktive Europakarte mit fiktiven Beispielen, Themen und offiziellen Portalen.</span><b>Karte öffnen →</b></a><a class="switch-path" href="#guided-orientation"><small>02 · ORIENTIEREN</small><strong>Geführt reflektieren</strong><span>Eigene Fragen entwickeln, Perspektiven prüfen und optional vorlesen lassen.</span><b>Orientierung starten →</b></a><a class="switch-path" href="./accountability-de.html#answer-practice"><small>03 · NACHVOLLZIEHEN</small><strong>Antworten prüfen</strong><span>Die Begründung, Nachweise und nächsten Schritte einer fiktiven Institution beurteilen.</span><b>Antworten untersuchen →</b></a></div>
 <p class="prototype-note"><strong>Aktuell: fiktive Lerndemonstration in Deutsch und Englisch.</strong> Hier werden keine realen Beiträge eingereicht. Die Wirkung auf tatsächliche Beteiligung und institutionelles Lernen ist noch nicht nachgewiesen.</p>
 </section>
 <section class="section" id="purpose" aria-labelledby="purpose-title">
@@ -349,7 +349,7 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 <section class="section" id="status" aria-labelledby="status-title">
 <p class="eyebrow">Heute und als nächster Schritt</p><h2 id="status-title">Was du hier bereits nutzen kannst</h2>
 <div class="grid">
-<article class="card"><h3>Heute vorhanden</h3><ul><li>Deutsch und Englisch mit Sprachwechsel.</li><li>Ein fiktiver Lernweg mit sechs Schritten und erklärendem Feedback.</li><li>Ein Antwortvergleich mit fünf fiktiven Unterlagen, erklärendem Feedback und Platz für die eigene Nachfrage.</li><li>Nutzung ohne Anmeldung und ohne externe KI. Szenarioantworten werden lokal im Browser verarbeitet.</li></ul></article>
+<article class="card"><h3>Heute vorhanden</h3><ul><li>Deutsch und Englisch mit Sprachwechsel.</li><li>Ein fiktiver Lernweg mit sechs Schritten und erklärendem Feedback sowie eine freiwillige Reflexion mit optionaler Browser-Sprachausgabe.</li><li>Ein Antwortvergleich mit fünf fiktiven Unterlagen, erklärendem Feedback und Platz für die eigene Nachfrage.</li><li>Nutzung ohne Anmeldung und ohne externe KI. Szenarioantworten werden lokal im Browser verarbeitet.</li></ul></article>
 <article class="card"><h3>Für einen Pilot zu entwickeln</h3><ul><li>Ein tatsächlicher Beteiligungsfall mit einer verantwortlichen öffentlichen Stelle.</li><li>Erprobung mit unterschiedlichen Nutzer:innen und Prüfung der Barrierefreiheit.</li><li>Überprüfbare institutionelle Antworten und dokumentierte Folgeschritte.</li><li>Untersuchung, ob das Gelernte selbstständig auf neue Situationen übertragen wird.</li></ul></article>
 </div>
 <p><strong>Erfolg bedeutet:</strong> Menschen können Verfahren und Antworten besser beurteilen. Institutionen können ihre Bearbeitung belegen und aus erkannten Problemen lernen. Mehr Vertrauen ist ein mögliches Forschungsergebnis, kein garantiertes Versprechen.</p>
@@ -358,6 +358,7 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 
 
 
+<section class="section switch-guided" id="guided-orientation" aria-labelledby="guided-heading"><p class="switch-kicker">Neue optionale Funktion · Browser-Sprachausgabe</p><h2 id="guided-heading">Dein Weg beginnt mit einer Frage.</h2><p>Entwickle zunächst deine eigene Frage. Du kannst dir jede Reflexionsfrage vorlesen lassen. Entscheide selbst, ob du anschließend die Karte, den Lernfall oder den institutionellen Rückweg erkunden möchtest.</p><div class="switch-reflect-grid"><div class="switch-reflect-card"><label for="switch-reflect-0">1. Worum geht es dir konkret?</label><textarea id="switch-reflect-0" rows="3" maxlength="1200"></textarea><button type="button" class="switch-speak-one" data-prompt="0">Frage anhören</button></div><div class="switch-reflect-card"><label for="switch-reflect-1">2. Was möchtest du besser verstehen?</label><textarea id="switch-reflect-1" rows="3" maxlength="1200"></textarea><button type="button" class="switch-speak-one" data-prompt="1">Frage anhören</button></div><div class="switch-reflect-card"><label for="switch-reflect-2">3. Welche Perspektive fehlt dir noch?</label><textarea id="switch-reflect-2" rows="3" maxlength="1200"></textarea><button type="button" class="switch-speak-one" data-prompt="2">Frage anhören</button></div><div class="switch-reflect-card"><label for="switch-reflect-3">4. Was könnte dein nächster Schritt sein?</label><textarea id="switch-reflect-3" rows="3" maxlength="1200"></textarea><button type="button" class="switch-speak-one" data-prompt="3">Frage anhören</button></div></div><div class="switch-controls"><button type="button" id="switch-stop-audio">Vorlesen beenden</button><button type="button" id="switch-clear-reflection">Eingaben löschen</button></div><p id="switch-audio-status" role="status" aria-live="polite"></p><p class="switch-small">Keine Sprachaufnahme, keine automatische Auswertung und keine Übermittlung der Antworten. Texte bleiben ausschließlich in diesen Feldern, bis du die Seite neu lädst. Die Vorlesefunktion ist von Browser und Gerät abhängig.</p></section>
 <section class="section" id="demo">
 
   <p class="eyebrow">
@@ -641,7 +642,7 @@ html[lang="de"] h1 { font-size:clamp(2.4rem,6.6vw,5.2rem); hyphens:auto; }
 <footer>
   <p>
     <strong>The Switch | Next Level</strong>
-    · Prototyp v0.9
+    · Prototyp v1.0
   </p>
 
   <p>
