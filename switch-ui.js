@@ -13,3 +13,22 @@ root.querySelector('#switch-stop-audio').addEventListener('click',()=>{stop();ou
 root.querySelector('#switch-clear-reflection').addEventListener('click',()=>{stop();fields.forEach(f=>f.value='');output.textContent='';fields[0]?.focus()});
 window.addEventListener('pagehide',stop);
 })();
+
+/* v1.1 progressive disclosure, preserving browser-local responses */
+(()=>{'use strict';
+ const region=document.getElementById('guided-orientation');if(!region)return;
+ const cards=[...region.querySelectorAll('.switch-reflect-card')];if(cards.length!==4)return;
+ const de=document.documentElement.lang==='de';let active=0;
+ const grid=region.querySelector('.switch-reflect-grid');
+ const progress=document.createElement('p');progress.className='switch-reflect-progress';progress.setAttribute('role','status');
+ grid.before(progress);
+ const nav=document.createElement('div');nav.className='switch-reflect-nav';
+ const back=document.createElement('button');back.type='button';back.textContent=de?'Zurück':'Back';
+ const next=document.createElement('button');next.type='button';
+ nav.append(back,next);grid.after(nav);
+ const draw=()=>{cards.forEach((c,i)=>{c.hidden=i!==active});progress.textContent=(de?'Frage ':'Question ')+(active+1)+(de?' von ':' of ')+cards.length;back.disabled=active===0;next.textContent=active===cards.length-1?(de?'Zur Auswertung':'View next steps'):(de?'Weiter':'Next');};
+ back.addEventListener('click',()=>{if(active>0){active--;draw();cards[active].querySelector('textarea')?.focus()}});
+ next.addEventListener('click',()=>{if(active<cards.length-1){active++;draw();cards[active].querySelector('textarea')?.focus()}else{(region.querySelector('.switch-controls')||region.querySelector('#switch-audio-status'))?.scrollIntoView({block:'nearest'});}});
+ draw();
+ document.querySelectorAll('.compare-table').forEach(table=>{const heads=[...table.querySelectorAll('thead th')].map(th=>th.textContent.trim());table.querySelectorAll('tbody tr').forEach(row=>[...row.children].forEach((cell,i)=>{if(heads[i])cell.setAttribute('data-label',heads[i])}));});
+})();
