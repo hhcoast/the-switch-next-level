@@ -14,3 +14,8 @@ header nav.switch-primary{display:flex;flex:1 1 100%;justify-content:center;flex
 @media(prefers-reduced-motion:reduce){.switch-path{transition:none}}
 /* Keep legacy comparison tables within the mobile viewport. */
 body{overflow-x:clip}.table-scroll{max-width:100%;overflow-x:auto}.compare-table{min-width:520px}
+
+/* Brussels keynote wordmark alignment; restrained, readable on phone */
+header .brand-logo,header .site-header img,.site-header img{width:clamp(176px,26vw,258px)!important;max-width:258px!important;max-height:90px!important;object-fit:contain}
+header .brand,.site-header>a:first-child{max-width:min(56vw,268px)}
+@media(max-width:540px){header .brand-logo,header .site-header img,.site-header img{width:clamp(175px,48vw,225px)!important;max-width:225px!important;max-height:68px!important} header .brand,.site-header>a:first-child{max-width:55vw}}
