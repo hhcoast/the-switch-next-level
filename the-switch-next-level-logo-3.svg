@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-label="The Switch Next Level logo">
+  <defs>
+    <style>
+      .sans{font-family: Inter, Arial, Helvetica, sans-serif;}
+    </style>
+  </defs>
+  <!-- icon capsule -->
+  <rect x="160" y="40" rx="56" ry="56" width="430" height="120" fill="#FFFFFF" stroke="#2B3340" stroke-width="8"/>
+  <path d="M373 40 h161 a56 56 0 0 1 56 56 v8 a56 56 0 0 1 -56 56 h-161 z" fill="#D97A59"/>
+  <!-- divider ring -->
+  <circle cx="368" cy="100" r="54" fill="#F7F3EB" stroke="#D97A59" stroke-width="8"/>
+  <circle cx="368" cy="100" r="18" fill="#D97A59"/>
+  <!-- left person -->
+  <circle cx="255" cy="92" r="20" fill="#2B3340"/>
+  <path d="M225 138c0-20 14-34 30-34s30 14 30 34v14h-60z" fill="#2B3340"/>
+  <!-- right group/network -->
+  <circle cx="470" cy="75" r="12" fill="#F7F3EB"/>
+  <circle cx="525" cy="75" r="12" fill="#F7F3EB"/>
+  <circle cx="497" cy="58" r="12" fill="#F7F3EB"/>
+  <path d="M470 75 L497 58 L525 75" stroke="#F7F3EB" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <circle cx="470" cy="115" r="18" fill="#F7F3EB"/>
+  <circle cx="525" cy="115" r="18" fill="#F7F3EB"/>
+  <circle cx="497" cy="96" r="18" fill="#F7F3EB"/>
+  <path d="M442 144c0-19 13-30 28-30s28 11 28 30v4h-56z" fill="#F7F3EB"/>
+  <path d="M469 144c0-19 13-30 28-30s28 11 28 30v4h-56z" fill="#F7F3EB"/>
+  <path d="M414 144c0-23 18-36 41-36s41 13 41 36v6h-82z" fill="#F7F3EB"/>
+  <!-- wordmark -->
+  <text x="80" y="286" class="sans" font-size="74" letter-spacing="4" font-weight="400" fill="#F6F3EA">THE</text>
+  <text x="250" y="286" class="sans" font-size="120" letter-spacing="2" font-weight="700" fill="#F6F3EA">SW</text>
+  <text x="443" y="286" class="sans" font-size="120" letter-spacing="2" font-weight="700" fill="#E56D4C">i</text>
+  <text x="475" y="286" class="sans" font-size="120" letter-spacing="2" font-weight="700" fill="#F6F3EA">TCH</text>
+  <!-- subtitle -->
+  <line x1="180" y1="344" x2="250" y2="344" stroke="#E56D4C" stroke-width="8" stroke-linecap="round"/>
+  <text x="290" y="356" class="sans" font-size="58" letter-spacing="8" font-weight="600" fill="#7BC9C2">NEXT LEVEL</text>
+  <line x1="796" y1="344" x2="866" y2="344" stroke="#E56D4C" stroke-width="8" stroke-linecap="round"/>
+</svg>
