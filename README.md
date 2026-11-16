@@ -1,6 +1,6 @@
 # The Switch | Next Level
 
-Independent learning and research prototype v0.8, 25 October 2026.
+Independent learning and research prototype v0.9.
 
 Next Level explores how people can navigate participation processes independently and critically assess institutional replies. It is designed as complementary learning support for existing participation arrangements. Additional value and lasting transfer have not been established.
 
@@ -8,10 +8,11 @@ Next Level explores how people can navigate participation processes independentl
 
 - German: https://hhcoast.github.io/the-switch-next-level/index-de.html
 - English: https://hhcoast.github.io/the-switch-next-level/index.html
-- Reply and evidence practice: https://hhcoast.github.io/the-switch-next-level/accountability-de.html#answer-practice
+- Reply and evidence practice: [German](https://hhcoast.github.io/the-switch-next-level/accountability-de.html#answer-practice) · [English](https://hhcoast.github.io/the-switch-next-level/accountability.html#answer-practice)
 
-## Available in v0.8
+## What you can try
 
+- German and English entry pages with access to the participation finder, reply practice and project background.
 - Original six-stage fictional learning journey, explanatory feedback and restart.
 - Source-linked comparison with established participation and democracy education initiatives.
 - Five fictional replies and practice records: receipt, intention, decision, implementation and examined effects.
@@ -34,4 +35,4 @@ No external AI, analytics, external fonts or third-party scripts are required. T
 
 ## Deployment
 
-Buildless HTML, CSS and JavaScript. GitHub Pages serves the root of the main branch. Keep the four HTML pages and the assets directory together. Source and pilot references are linked on the pages and in PILOT.md. Local preview configuration is not required for GitHub Pages.
+The prototype requires no local build. GitHub Pages serves the root of the `main` branch. Keep all eight HTML pages together with their CSS, JavaScript and SVG files in the repository root and under `assets/`. Source and pilot references are linked on the pages and in PILOT.md. Local preview configuration is not required for GitHub Pages.

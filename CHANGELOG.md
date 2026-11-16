@@ -1,5 +1,11 @@
 # Changes
 
+## v0.9, 16 November 2026
+
+- Added German and English entry pages and a participation finder.
+- Moved the six-stage learning case and project background to the Explore pages.
+- Updated navigation links, language switches and alternate-language metadata to match the new page structure.
+
 ## v0.8, 25 October 2026
 
 - Grounded the public positioning in established participation and civic education practice with links to primary sources.

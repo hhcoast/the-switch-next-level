@@ -1,5 +1,7 @@
 # Update v0.8 hochladen
 
+> Historische Anleitung zum v0.8-Paket vom 25.10.2026. Die aktuelle Deployment-Dokumentation steht in der [README](README.md#deployment).
+
 Stand: 25.10.2026. Dieses Paket enthält die umgesetzte und lokal geprüfte Version. Die Veröffentlichung konnte wegen fehlendem Schreibzugriff der GitHub-Verbindung nicht erfolgen. Der Live-Stand wurde nicht verändert.
 
 ## Upload
