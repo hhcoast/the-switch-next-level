@@ -1,6 +1,6 @@
 # Changes
 
-## v0.9, 16 November 2026
+## v1.2, 16 November 2026
 
 - Added German and English entry pages and a participation finder.
 - Moved the six-stage learning case and project background to the Explore pages.

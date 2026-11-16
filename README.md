@@ -1,6 +1,6 @@
 # The Switch | Next Level
 
-Independent learning and research prototype v0.9.
+Independent learning and research prototype v1.2.
 
 Next Level explores how people can navigate participation processes independently and critically assess institutional replies. It is designed as complementary learning support for existing participation arrangements. Additional value and lasting transfer have not been established.
 
